@@ -1,7 +1,8 @@
+require('dotenv').config();
 const express = require("express");
 const Stripe = require('stripe');
 const cors = require("cors");
-const stripe = Stripe('sk_test_51OSGOzSIkNIxCI01wwDbnshaiCV5YiHYu52gnWOiCrvsn3mKD5WXVjWEHdnXwGHbbqRHjfoRiug5P7zDZ1ekC49C00vIuc7WRZ');
+const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 const app = express();
 
 app.use(express.json());
